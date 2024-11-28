@@ -5,48 +5,108 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #fdfdfd; /* Subtle off-white for a clean, polished background */
+    line-height: 1.6; /* Improved readability */
 }
 
+/* Headings */
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     margin: 0;
+    color: #222; /* Slightly darker shade for a more luxurious feel */
 }
 
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700; /* Bold for better emphasis */
+    line-height: 1.3; /* Spacing for readability */
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Links */
 a {
     text-decoration: none;
-    color: inherit;
+    color: #d4af37; /* Gold accent to reinforce luxury */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #b38f2a; /* Darker gold on hover for subtle interactivity */
+}
+
+/* Typography Enhancements */
+p, ul, li {
+    font-size: 1.125rem; /* Slightly larger font for accessibility and luxury */
+    font-weight: 400; /* Keep body text light and readable */
+    color: #555; /* Softer tone for body text */
+}
+
+strong {
+    color: #222; /* Emphasized text in headings color */
+}
+
+/* Layout and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px; /* Wider container for a more open layout */
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 /* Header */
 header {
-    background-color: #fff;
+    background-color: #fff; /* Clean and professional */
     padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Softer shadow for a more elegant feel */
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
+
+header.scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow when scrolled */
+    background-color: #fdfdfd; /* Slight color change for interactivity */
+}
+
 /* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 0;
+    max-width: 1200px; /* Keep navigation content aligned with the main content */
+    margin: 0 auto;
 }
 
-.logo a {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
+.logo img {
+    max-height: 50px; /* Logo maintains proportion */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
+.logo img:hover {
+    transform: scale(1.05); /* Subtle zoom effect for logo */
+}
+
+/* Navigation Links */
 .nav-links {
     display: flex;
     list-style: none;
@@ -58,15 +118,32 @@ header {
     font-size: 1rem;
     font-weight: 600;
     color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    text-transform: uppercase; /* Adds a formal, elegant touch */
+    letter-spacing: 0.5px; /* Slight spacing for sophistication */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
 }
 
 .nav-links a:hover {
-    color: #d4af37; /* Gold accent */
+    color: #d4af37; /* Gold accent for luxury */
 }
 
-/* Toggle Button */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Space between text and underline */
+    width: 0;
+    height: 2px;
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Underline grows on hover */
+}
+
+/* Toggle Button (for Mobile) */
 .nav-toggle {
     display: none;
     font-size: 1.5rem;
@@ -76,77 +153,1006 @@ header {
     color: #333;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: block; /* Show toggle button on smaller screens */
+    }
+
     .nav-links {
-        display: none;
+        display: none; /* Hide links initially on mobile */
         flex-direction: column;
+        gap: 1rem;
         background-color: #fff;
         position: absolute;
         top: 100%;
         right: 0;
         width: 100%;
-        padding: 1rem;
+        padding: 1rem 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex; /* Show links when toggle is active */
     }
 
-    .nav-toggle {
-        display: block;
+    .nav-links a {
+        padding: 0.5rem 1rem;
+        text-align: center;
     }
 }
-
-
 /* Hero Section */
 .hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-    url('hero-background.jpg') center/cover no-repeat;
-    color: #fff;
     text-align: center;
+    height: 90vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+    url('assets/images/hero.webp') center/cover no-repeat;
+    color: #fff;
+    padding: 0 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(212, 175, 55, 0.2), rgba(0, 0, 0, 0.7));
+    z-index: 1; /* Adds an additional luxurious overlay */
 }
 
 .hero-content {
-    max-width: 600px;
+    position: relative;
+    z-index: 2; /* Ensures content is above the overlay */
+    max-width: 800px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Enhances readability on the background */
 }
 
-.cta-button {
-    margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem;
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem; /* Slightly larger for emphasis */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    line-height: 1.3;
+    letter-spacing: 1px; /* Subtle spacing for a sophisticated look */
+    animation: fadeIn 1.5s ease;
+}
+
+.hero p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    color: #f0f0f0;
+    animation: fadeIn 2s ease;
+}
+
+.hero .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem; /* Larger button for prominence */
     background-color: #d4af37; /* Gold accent */
     color: #fff;
-    border: none;
-    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.125rem; /* Slightly larger font for luxury feel */
     font-weight: bold;
-    transition: background 0.3s;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px; /* Softer edges for elegance */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    animation: fadeIn 2.5s ease;
 }
 
-.cta-button:hover {
-    background-color: #b38f2a;
+.hero .cta-button:hover {
+    background-color: #b38f2a; /* Darker gold for hover effect */
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(212, 175, 55, 0.4); /* Adds depth on hover */
 }
 
-/* Footer */
-footer {
+/* Hero Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+    }
+
+    .hero .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 70vh; /* Adjust for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+}
+/* Services Section */
+.services {
+    padding: 5rem 2rem;
+    background-color: #fdfdfd; /* Lighter background for a clean, elegant look */
     text-align: center;
-    padding: 1rem;
-    background: #333;
+}
+
+.services h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.75rem; /* Slightly larger for prominence */
+    margin-bottom: 1.5rem;
+    color: #222; /* Darker for a more sophisticated feel */
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.services p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.375rem; /* Enhanced readability */
+    color: #555; /* Softer text color for body */
+    margin-bottom: 3rem;
+    max-width: 750px; /* Slightly wider for a balanced layout */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+/* Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for a wider column minimum */
+    gap: 2.5rem; /* Increased spacing for a luxurious, spacious feel */
+}
+
+/* Service Card */
+.service-card {
+    background-color: #fff;
+    border: none; /* Clean design without borders */
+    border-radius: 10px; /* Softer corners for a modern look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* More dynamic hover effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px; /* Uniform image height for alignment */
+    object-fit: cover;
+    border-bottom: 5px solid #d4af37; /* Gold accent border for luxury */
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem; /* Slightly larger for emphasis */
+    margin: 1.5rem 0 0.75rem;
+    color: #333;
+}
+
+.service-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Tabs Navigation */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem; /* Balanced spacing */
+    gap: 1.5rem;
+}
+
+.tab-button {
+    padding: 0.875rem 2rem; /* Enlarged buttons for better interactivity */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #fff;
+    border: 2px solid #ddd; /* Slightly thicker border for definition */
+    border-radius: 50px; /* Rounded pills for a modern, elegant look */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-button.active {
+    background-color: #d4af37; /* Gold accent for active state */
+    color: #fff;
+    border-color: #d4af37;
+    box-shadow: 0 4px 8px rgba(212, 175, 55, 0.2); /* Subtle shadow for depth */
+}
+
+.tab-button:hover {
+    background-color: #b38f2a;
+    color: #fff;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none; /* Hidden by default */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Consistent with the services grid */
+    gap: 2.5rem;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px); /* Smooth upward entrance */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services h2 {
+        font-size: 2rem;
+    }
+
+    .services p {
+        font-size: 1rem;
+    }
+}
+/* About Us Section */
+.about {
+    padding: 5rem 2rem;
+    background-color: #fdfdfd; /* Subtle off-white for a clean and professional look */
+    color: #333;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem; /* Increased spacing for an airy layout */
+    align-items: center;
+    justify-content: center; /* Center alignment for balanced design */
+}
+
+.about-text {
+    flex: 1;
+    max-width: 600px; /* Limit width for better readability */
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.8;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; /* Slightly larger for emphasis */
+    margin-bottom: 1.5rem;
+    color: #222; /* Darker shade for luxurious appeal */
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.about-text p {
+    font-size: 1.25rem; /* Larger for readability */
+    margin-bottom: 1.5rem;
+    color: #555; /* Softer text for body */
+}
+
+.about-text strong {
+    color: #d4af37; /* Gold accent for emphasis */
+    font-weight: bold;
+}
+
+/* Image Styling */
+.about-image {
+    flex: 1;
+    max-width: 500px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 12px; /* Softer edges for a modern look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for focus */
+}
+
+/* Values Section */
+.about-values {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.about-values h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.25rem; /* Slightly larger for emphasis */
+    margin-bottom: 1.5rem;
+    color: #222;
+}
+
+.about-values ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Wider gaps for better spacing */
+}
+
+.about-values li {
+    background: #fff;
+    border: 2px solid #ddd; /* Thicker border for better definition */
+    border-radius: 12px; /* Rounded corners for elegance */
+    padding: 1rem 2rem; /* Increased padding for better proportions */
+    font-size: 1.25rem; /* Larger for readability */
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Spacing between icon and text */
+    opacity: 0;
+    transform: translateY(30px); /* More pronounced entry animation */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+}
+
+.about-values li.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-values li:hover {
+    background: #d4af37; /* Gold accent for hover state */
+    color: #fff;
+    border-color: #d4af37;
+    box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3); /* Glowing hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center;
+    }
+
+    .about-image {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+
+    .about-text {
+        max-width: 100%; /* Full width for better flow */
+    }
+
+    .about-values ul {
+        gap: 1rem; /* Adjust spacing for smaller screens */
+    }
+
+    .about-values li {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.125rem;
+    }
+}
+
+/* Technology Section */
+.technology {
+    padding: 5rem 2rem;
+    background-color: #fdfdfd; /* Subtle off-white for a clean, luxurious feel */
+    color: #333;
+}
+
+.technology h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.75rem; /* Slightly larger for emphasis */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #222; /* Darker for a more luxurious look */
+    letter-spacing: 1px;
+}
+
+.technology p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25rem; /* Slightly larger for readability */
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #555; /* Softer tone for text */
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+/* Grid Layout */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Increased minimum width for a balanced layout */
+    gap: 2.5rem; /* More spacious gaps for elegance */
+    justify-content: center;
+}
+
+/* Technology Card */
+.tech-card {
+    background-color: #fff;
+    border-radius: 12px; /* Softer corners for a modern look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced depth */
+    overflow: hidden;
+    text-align: center;
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateY(30px); /* More pronounced animation for entry */
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.tech-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tech-card:hover {
+    transform: translateY(-10px); /* Dynamic hover effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Image Styling */
+.tech-card img {
+    width: 100%;
+    height: 200px; /* Uniform height for a clean grid */
+    object-fit: cover;
+    border-bottom: 5px solid #d4af37; /* Gold accent border for luxury branding */
+}
+
+/* Card Content */
+.tech-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem; /* Slightly larger for prominence */
+    margin: 1.5rem 0 0.75rem;
+    color: #333;
+    text-transform: capitalize;
+}
+
+.tech-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .technology h2 {
+        font-size: 2.25rem; /* Adjust heading size for smaller screens */
+    }
+
+    .technology p {
+        font-size: 1.125rem;
+    }
+
+    .tech-card img {
+        height: 180px; /* Adjust image height for smaller devices */
+    }
+}
+
+/* Blog Section */
+.blog {
+    padding: 5rem 2rem;
+    background-color: #fdfdfd; /* Subtle off-white for a clean, luxurious feel */
+    color: #333;
+}
+
+.blog h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.75rem; /* Slightly larger for emphasis */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #222; /* Darker shade for sophistication */
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.blog p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 1.25rem; /* Slightly larger for readability */
+    margin-bottom: 3rem;
+    color: #555; /* Softer color for body text */
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+/* Blog Grid */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Balanced grid layout */
+    gap: 2.5rem; /* Spacious gaps for an elegant look */
+    justify-content: center;
+}
+
+/* Blog Card */
+.blog-card {
+    background-color: #fff;
+    border-radius: 12px; /* Rounded corners for a modern look */
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px); /* More pronounced hover effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+/* Blog Card Image */
+.blog-card img {
+    width: 100%;
+    height: 200px; /* Uniform height for consistency */
+    object-fit: cover;
+    border-bottom: 5px solid #d4af37; /* Gold accent border for branding */
+}
+
+/* Blog Card Content */
+.blog-content {
+    padding: 1.5rem;
+    text-align: left; /* Align text for readability */
+}
+
+.blog-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem; /* Larger for prominence */
+    margin-bottom: 0.75rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.blog-content h3 a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.blog-content h3 a:hover {
+    color: #d4af37; /* Gold accent for hover state */
+}
+
+.blog-content p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    font-size: 1rem; /* Slightly larger for better emphasis */
+    color: #d4af37; /* Gold accent for luxury */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+    color: #b38f2a; /* Darker gold for hover */
+}
+
+/* Search Bar */
+.search-bar {
+    margin-bottom: 3rem; /* Increased spacing for separation */
+    text-align: center;
+}
+
+.search-bar input {
+    width: 80%;
+    max-width: 450px; /* Slightly larger for easier usability */
+    padding: 1rem; /* More padding for better proportions */
+    border: 2px solid #ddd; /* Thicker border for a defined look */
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: #d4af37; /* Gold accent focus state */
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3); /* Subtle glow effect */
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.pagination a {
+    margin: 0 0.5rem;
+    padding: 0.75rem 1.25rem; /* Larger buttons for easier interaction */
+    border: 2px solid #ddd; /* More defined border */
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px; /* Rounded corners for a modern feel */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination a.active {
+    background-color: #d4af37; /* Gold accent for active page */
+    color: #fff;
+    border-color: #d4af37;
+}
+
+.pagination a:hover {
+    background-color: #b38f2a; /* Darker gold for hover state */
     color: #fff;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
+    .blog h2 {
+        font-size: 2.25rem; /* Adjust heading size for smaller screens */
+    }
+
+    .blog p {
+        font-size: 1.125rem;
+    }
+
+    .blog-card img {
+        height: 180px; /* Adjust image height for smaller screens */
+    }
+
+    .search-bar input {
+        max-width: 350px; /* Adjust for smaller devices */
+    }
+}
+/* Contact Section */
+.contact {
+    padding: 5rem 2rem;
+    background-color: #fdfdfd; /* Subtle off-white for a clean and welcoming feel */
+    color: #333;
+}
+
+.contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.75rem; /* Slightly larger for emphasis */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #222; /* Darker shade for sophistication */
+    letter-spacing: 1px;
+}
+
+.contact p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 1.25rem; /* Slightly larger for readability */
+    margin-bottom: 3rem;
+    color: #555; /* Softer tone for body text */
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+/* Contact Grid Layout */
+.contact-grid {
+    display: flex;
+    gap: 3rem; /* Increased spacing for an open layout */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    max-width: 600px; /* Limit width for readability */
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group label {
+    font-weight: 600; /* Slightly bolder for emphasis */
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 1rem; /* Larger padding for better usability */
+    border: 2px solid #ddd; /* More defined border */
+    border-radius: 8px; /* Rounded corners for a modern feel */
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37; /* Gold accent for focus */
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3); /* Subtle glow for luxury branding */
+}
+
+.cta-button {
+    padding: 1rem;
+    background-color: #d4af37; /* Gold accent for luxury */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.125rem; /* Slightly larger font for emphasis */
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #b38f2a; /* Darker gold for hover state */
+    transform: scale(1.05); /* Subtle scaling effect for interactivity */
+}
+
+/* Contact Details */
+.contact-details {
+    flex: 1;
+    max-width: 500px; /* Limit width for better alignment */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.125rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for a refined appearance */
+}
+
+.contact-details h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem; /* Slightly larger for emphasis */
+    margin-bottom: 1rem;
+    color: #222;
+    letter-spacing: 0.5px;
+}
+
+.contact-details p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.contact-details a {
+    color: #d4af37; /* Gold accent for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+    color: #b38f2a; /* Darker gold for hover */
+}
+
+/* Map Styling */
+.map iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px; /* Rounded corners for a polished look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Depth for visual interest */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-grid {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+    }
+
+    .contact-form,
+    .contact-details {
+        max-width: 100%; /* Full width for smaller screens */
+    }
+}
+
+/* Footer Section */
+.footer {
+    background-color: #222; /* Darker shade for a more luxurious feel */
+    color: #fff;
+    padding: 4rem 2rem; /* Increased padding for an open layout */
+}
+
+.footer h3,
+.footer h4 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1.5rem;
+    color: #d4af37; /* Gold accent for headings */
+    font-size: 1.5rem; /* Slightly larger for prominence */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer Content Grid */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Balanced grid layout */
+    gap: 2.5rem; /* Wider gaps for elegance */
+    margin-bottom: 3rem;
+}
+
+/* Quick Links */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #ccc;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #d4af37; /* Gold accent on hover */
+}
+
+/* Contact Information */
+.footer-contact a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+    color: #b38f2a; /* Darker gold for hover */
+}
+
+/* Social Media Icons */
+.footer-social {
+    text-align: center;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Wider spacing for visual clarity */
+}
+
+.footer-social .social-icons a {
+    font-size: 1.75rem; /* Slightly larger for emphasis */
+    color: #d4af37; /* Gold accent for icons */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social .social-icons a:hover {
+    color: #b38f2a; /* Darker gold for hover */
+    transform: scale(1.1); /* Subtle scaling effect */
+}
+
+/* Newsletter Subscription */
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem; /* Added spacing for separation */
+}
+
+.newsletter input {
+    padding: 0.875rem; /* Larger input for better usability */
+    border: 2px solid #444;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff; /* Light background for contrast */
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter input:focus {
+    border-color: #d4af37; /* Gold accent for focus */
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3); /* Subtle glow effect */
+}
+
+.newsletter button {
+    padding: 1rem 2rem; /* Larger button for prominence */
+    background-color: #d4af37; /* Gold accent for luxury */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: #b38f2a; /* Darker gold for hover */
+    transform: scale(1.05); /* Subtle scaling effect */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444; /* Subtle separator */
+    padding-top: 1.5rem; /* Increased spacing for a balanced layout */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    .newsletter form {
+        flex-direction: column; /* Stack input and button vertically */
         gap: 1rem;
     }
 
-    .hero {
-        height: 70vh;
+    .footer-social .social-icons {
+        gap: 1rem; /* Adjust spacing for smaller screens */
     }
 }

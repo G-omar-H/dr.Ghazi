@@ -16,7 +16,9 @@
 <header>
     <nav class="navbar">
         <div class="logo">
-            <a href="#home">Centre Dentaire Dr. Ghazi</a>
+            <a href="#home">
+                <img src="assets/images/logo.jpg" alt="Centre Dentaire Dr. Ghazi Logo">
+            </a>
         </div>
         <button class="nav-toggle" aria-label="Toggle navigation">
             ☰
@@ -32,6 +34,7 @@
 
 
 <main>
+
     <section id="hero" class="hero">
         <div class="hero-content">
             <h1>Bienvenue au Centre Dentaire Dr. Ghazi</h1>
@@ -39,20 +42,299 @@
             <a href="#services" class="cta-button">Découvrir nos services</a>
         </div>
     </section>
-    <section id="services">
-        <!-- Placeholder for services content -->
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Nos Services</h2>
+            <p>Découvrez nos soins dentaires haut de gamme, alliant expertise, technologie de pointe, et attention personnalisée.</p>
+
+            <div class="tabs">
+                <button class="tab-button active" data-tab="general">Soins Généraux</button>
+                <button class="tab-button" data-tab="aesthetic">Esthétique Dentaire</button>
+                <button class="tab-button" data-tab="implants">Implants et Prothèses</button>
+                <button class="tab-button" data-tab="orthodontics">Orthodontie</button>
+            </div>
+
+            <div class="tab-content active" id="general">
+                <div class="service-card">
+                    <img src="assets/images/nettoyage-dentaire-professionnel.jpg" alt="Nettoyage professionnel">
+                    <h3>Nettoyage Professionnel</h3>
+                    <p>Préservez la santé de vos gencives et de vos dents.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/carie-dentaire.jpg.webp" alt="Soins des caries">
+                    <h3>Traitement des Caries</h3>
+                    <p>Des solutions efficaces pour les caries dentaires.</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="aesthetic">
+                <div class="service-card">
+                    <img src="assets/images/blanchissement_dentaire.jpeg" alt="Blanchiment dentaire">
+                    <h3>Blanchiment Dentaire</h3>
+                    <p>Redonnez éclat et blancheur à votre sourire.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/Facette-dentaire-Dentiste-Lyon.jpg" alt="Facettes dentaires">
+                    <h3>Facettes Dentaires</h3>
+                    <p>Corrigez les imperfections esthétiques de vos dents.</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="implants">
+                <div class="service-card">
+                    <img src="assets/images/implant-dentaire-hongrie-1024x683.webp" alt="Implants dentaires">
+                    <h3>Implants Dentaires</h3>
+                    <p>Une solution durable pour remplacer les dents manquantes.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/prothèses_dentaires.jpg" alt="Prothèses dentaires">
+                    <h3>Prothèses Dentaires</h3>
+                    <p>Restaurez la fonctionnalité et l'esthétique de vos dents.</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="orthodontics">
+                <div class="service-card">
+                    <img src="assets/images/invisalign.jpg" alt="Invisalign">
+                    <h3>Invisalign</h3>
+                    <p>Alignez vos dents discrètement avec des gouttières transparentes.</p>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/appareils_dentaires.jpg" alt="Appareils dentaires">
+                    <h3>Appareils Dentaires</h3>
+                    <p>Des solutions modernes pour un sourire parfaitement aligné.</p>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="about">
-        <!-- Placeholder for about content -->
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>À Propos de Nous</h2>
+                    <p>
+                        Au <strong>Centre Dentaire Dr. Ghazi</strong>, nous sommes fiers d'offrir des soins dentaires
+                        d'exception qui allient tradition et innovation. Fondé sur les principes d'excellence, d'éthique et
+                        de soins personnalisés, notre clinique est un espace où votre sourire est notre priorité.
+                    </p>
+                    <p>
+                        Avec une équipe de spécialistes hautement qualifiés et des équipements de pointe, nous nous
+                        engageons à garantir une expérience confortable et des résultats remarquables. Faites confiance
+                        à notre expertise pour transformer votre santé bucco-dentaire.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="about-us.jpg" alt="Dr. Ghazi et l'équipe du Centre Dentaire">
+                </div>
+            </div>
+            <div class="about-values">
+                <h3>Nos Valeurs</h3>
+                <ul>
+                    <li>💎 Excellence</li>
+                    <li>🛡️ Éthique</li>
+                    <li>💼 Professionnalisme</li>
+                    <li>🧼 Hygiène</li>
+                    <li>🎨 Élégance</li>
+                    <li>❤️ Bien-être et Soin</li>
+                </ul>
+            </div>
+        </div>
     </section>
-    <section id="contact">
-        <!-- Placeholder for contact content -->
+
+    <section id="technology" class="technology">
+        <div class="container">
+            <h2>Notre Technologie</h2>
+            <p>
+                Au <strong>Centre Dentaire Dr. Ghazi</strong>, nous utilisons des technologies de pointe pour offrir des
+                soins précis, sûrs et efficaces. Découvrez comment notre équipement moderne améliore votre expérience
+                dentaire.
+            </p>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <img src="assets/images/scanner3D.jpeg" alt="Scanner 3D">
+                    <h3>Scanner 3D</h3>
+                    <p>Des diagnostics précis grâce à une imagerie tridimensionnelle avancée.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="assets/images/Laser-dentaire.webp" alt="Laser dentaire">
+                    <h3>Laser Dentaire</h3>
+                    <p>Des traitements rapides et confortables avec une technologie de laser avancée.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="assets/images/cad-cam_4-min.jpg" alt="Systèmes CAD/CAM">
+                    <h3>Systèmes CAD/CAM</h3>
+                    <p>Conception et fabrication assistées par ordinateur pour des restaurations parfaites.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="assets/images/radiographie_numérique.jpg" alt="Radiographie numérique">
+                    <h3>Radiographie Numérique</h3>
+                    <p>Des radiographies précises avec une exposition réduite aux rayonnements.</p>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2>Notre Blog</h2>
+            <p>
+                Restez informé avec nos derniers articles sur les soins dentaires, les technologies innovantes, et des
+                conseils pour un sourire sain et éclatant.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="blogSearch" placeholder="Recherchez des conseils, articles ou technologies...">
+            </div>
+
+
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img src="assets/images/hygiene-bucco-dentaire-indispensable.webp" alt="Conseils pour une bonne hygiène bucco-dentaire">
+                    <div class="blog-content">
+                        <h3><a href="#">5 Conseils pour une Bonne Hygiène Bucco-Dentaire</a></h3>
+                        <p>Adoptez ces habitudes simples pour garder un sourire sain au quotidien.</p>
+                        <a href="#" class="read-more">Lire la suite &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <img src="assets/images/blanchiment_blog.jpg" alt="Tout savoir sur le blanchiment dentaire">
+                    <div class="blog-content">
+                        <h3><a href="#">Tout Savoir sur le Blanchiment Dentaire</a></h3>
+                        <p>Découvrez les différentes options pour redonner éclat et blancheur à vos dents.</p>
+                        <a href="#" class="read-more">Lire la suite &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <img src="assets/images/implant-dentaire-hongrie-1024x683.webp" alt="Les avantages des implants dentaires modernes">
+                    <div class="blog-content">
+                        <h3><a href="#">Les Avantages des Implants Dentaires Modernes</a></h3>
+                        <p>Comprenez comment les implants peuvent améliorer votre qualité de vie.</p>
+                        <a href="#" class="read-more">Lire la suite &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <a href="#">&laquo; Précédent</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Suivant &raquo;</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contactez-Nous</h2>
+            <p>Nous sommes là pour répondre à vos questions et prendre soin de votre sourire. N'hésitez pas à nous contacter !</p>
+
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Envoyer</button>
+                    </form>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="contact-details">
+                    <h3>Nos Coordonnées</h3>
+                    <p><strong>Adresse :</strong> 123 Rue de la Santé, Paris, France</p>
+                    <p><strong>Téléphone :</strong> <a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
+                    <p><strong>Email :</strong> <a href="mailto:contact@centredentaireghazi.com">contact@centredentaireghazi.com</a></p>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13486.042497920973!2d-6.3779822!3d32.3249988!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda3878bd1898313%3A0xa81e4a1a447ad38a!2sCentre%20dentaire%20Dr.Ghazi%20Hamid!5e0!3m2!1sen!2sma!4v1732792685163!5m2!1sen!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </main>
 
-<footer>
-    <p>&copy; 2024 Centre Dentaire Dr. Ghazi. Tous droits réservés.</p>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <!-- About the Clinic -->
+            <div class="footer-about">
+                <h3>Centre Dentaire Dr. Ghazi</h3>
+                <p>
+                    Nous combinons tradition, innovation et soins personnalisés pour offrir une expérience dentaire
+                    exceptionnelle à chaque visite.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><strong>Adresse :</strong> 123 Rue de la Santé, Paris, France</p>
+                <p><strong>Téléphone :</strong> <a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
+                <p><strong>Email :</strong> <a href="mailto:contact@centredentaireghazi.com">contact@centredentaireghazi.com</a></p>
+            </div>
+
+
+            <!-- Social Media -->
+            <div class="footer-social">
+                <h4>Suivez-Nous</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="newsletter">
+                <h4>Inscrivez-Vous à Notre Newsletter</h4>
+                <form action="#" method="POST">
+                    <input type="email" placeholder="Votre email" required>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+
+        </div>
+
+
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Centre Dentaire Dr. Ghazi. Tous droits réservés.</p>
+        </div>
+    </div>
 </footer>
+
 
 <script src="scripts.js"></script>
 </body>
